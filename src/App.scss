@@ -9,10 +9,24 @@ h1 {
 // Nested Rules
 $bgcolor: #c1c1c1;
 
-#nested {
+.nested {
   background-color: $bgcolor;
   h3 {
     color: green;
+  }
+}
+
+//Mixin Example
+
+@mixin default-text-style {
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mixin {
+  p {
+    @include default-text-style;
   }
 }
 
@@ -35,23 +49,9 @@ $bgcolor: #c1c1c1;
 }
 
 $primary-color: green;
-#function {
+.function {
   background-color: invert($primary-color, 80%);
   h3 {
     color: white;
-  }
-}
-
-//Mixin Example
-
-@mixin default-text-style {
-  padding: 20px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-#mixin {
-  p {
-    @include default-text-style;
   }
 }
